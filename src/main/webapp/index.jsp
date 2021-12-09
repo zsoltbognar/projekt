@@ -2,12 +2,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Kezdőlap</title>
 </head>
 <body>
-<h1><%= "Hello World!" %>
-</h1>
-<br/>
-<a href="login.jsp">Hello Servlet</a>
+
+<a href="login.jsp"><h1>Start</h1></a>
 </body>
 </html>

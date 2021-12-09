@@ -13,6 +13,7 @@
     <title>Regisztráció</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js">
+        document.getElementById("text").style.display = "block";
     </script>
 
 </head>
