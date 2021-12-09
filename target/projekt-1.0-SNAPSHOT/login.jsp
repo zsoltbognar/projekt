@@ -26,7 +26,7 @@
     <form action="check.jsp" method="post">
         <div class="data">
 
-            <label>Felhasználó név</label> <input type="text" required name="userName">
+            <label>Felhasználónév</label> <input type="text" required name="userName">
 
         </div>
         <div class="data">
