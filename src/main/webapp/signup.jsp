@@ -14,8 +14,28 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js">
     </script>
+
 </head>
 <body>
+
+
+
+
+<div class="container">
+
+    <div class="text">
+        Regisztrációs Form
+    </div>
+    <form action="signup.jsp" method="post">
+        Felhasználónév: <input type="text" name="userName"><br/>
+        Jelszó: <input type="password" name="psw" ><br/>
+
+
+    </form>
+</div>
+
+
+
 
 </body>
 </html>

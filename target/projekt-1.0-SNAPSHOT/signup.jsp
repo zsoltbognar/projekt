@@ -9,14 +9,37 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <title>Title</title>
     <meta charset="UTF-8">
     <title>Regisztráció</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js">
     </script>
+    <style type="text/css">
+        body{
+            display: none;
+        }
+    </style>
 </head>
 <body>
+
+
+
+
+<div class="container">
+
+    <div class="text">
+        Regisztrációs Form
+    </div>
+    <form action="signup.jsp" method="post">
+        Felhasználónév: <input type="text" name="userName"><br/>
+        Jelszó: <input type="password" name="psw" ><br/>
+
+
+    </form>
+</div>
+
+
+
 
 </body>
 </html>

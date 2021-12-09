@@ -39,6 +39,7 @@ input[type="checkbox"]{
 }
 #show:checked ~ .container{
     display: block;
+
 }
 .container .close-btn{
     position: absolute;

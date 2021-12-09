@@ -25,17 +25,23 @@
        Bejelentkezés</div>
     <form action="check.jsp" method="post">
         <div class="data">
-            <label>Felhasználó név</label> <input type="text" required>
+
+            <label>Felhasználó név</label> <input type="text" required name="userName">
+
         </div>
         <div class="data">
-            <label>Jelszó</label> <input type="password" required>
+
+            <label>Jelszó</label> <input type="password" required name="password">
+
         </div>
         <div class="forgot-pass">
+
             <a href="#">Elfelejtett jelszó?</a></div>
+
         <div class="btn">
             <div class="inner">
             </div>
-            <button type="submit" >Belépés</button>
+            <button type="submit" > Belépés </button>
         </div>
         <div class="signup-link">
             Nincs fiókod?<a href="signup.jsp">Regisztráció most</a></div>
