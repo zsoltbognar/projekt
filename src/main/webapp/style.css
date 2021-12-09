@@ -126,7 +126,13 @@ form .separate{
     margin: 5px;
 
 }
+form .iframe{
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
 
+
+}
 
 form .signup-link{
     text-align: center;

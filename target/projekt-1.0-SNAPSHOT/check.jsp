@@ -33,7 +33,7 @@
         <c:choose>
             <c:when test="${param.password eq \"jsp\"}">
                 <% session.setAttribute("validUser", request.getParameter("userName"));%>
-                <jsp:forward page="index.jsp" />
+                <jsp:forward page="mainuser.jsp" />
             </c:when>
             <c:otherwise>
                 <jsp:forward page="index.jsp" >
