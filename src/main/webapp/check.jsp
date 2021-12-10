@@ -12,6 +12,7 @@
     response.setCharacterEncoding("UTF-8");
 %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=windows-1250"/>
@@ -23,21 +24,34 @@
 <body>
 <% session.removeAttribute("validUser"); %>
 
+<sql:setDataSource var="adatbazis"
+                   driver="org.apache.derby.jdbc.ClientDriver"
+                   url="jdbc:derby://localhost:1527/db_bead"
+                   scope="session"/>
+
+<sql:query var="account" dataSource="${adatbazis}">
+    SELECT username, password FROM USERS where username = '${param.userName}' AND password = '${param.password}'
+</sql:query>
+
 <c:choose>
     <c:when test="${(empty param.userName) || (empty param.password)}">
-        <jsp:forward page="index.jsp" >
+        <jsp:forward page="login.jsp" >
             <jsp:param name="errorMsg" value="Valós felhasznalói név és jelszó megadása kötelező."/>
         </jsp:forward>
     </c:when>
     <c:otherwise>
         <c:choose>
-            <c:when test="${param.password eq \"jsp\"}">
+            <c:when test="${account.rowCount ne 0 && param.userName eq 'admin'}">
+                <% session.setAttribute("validUser", request.getParameter("userName"));%>
+                <jsp:forward page="admin.jsp" />
+            </c:when>
+            <c:when test="${account.rowCount ne 0}">
                 <% session.setAttribute("validUser", request.getParameter("userName"));%>
                 <jsp:forward page="mainuser.jsp" />
             </c:when>
             <c:otherwise>
-                <jsp:forward page="index.jsp" >
-                    <jsp:param name="errorMsg" value="A megadott jelszó helytelen. Probálja meg a 'jsp' jelszóval."/>
+                <jsp:forward page="login.jsp" >
+                    <jsp:param name="errorMsg" value="Hibás felhasználónév vagy jelszó"/>
                 </jsp:forward>
             </c:otherwise>
         </c:choose>

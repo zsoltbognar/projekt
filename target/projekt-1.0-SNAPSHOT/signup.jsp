@@ -6,6 +6,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    request.setCharacterEncoding("UTF-8");
+    response.setCharacterEncoding("UTF-8");
+%>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -17,12 +21,19 @@
 
     </script>
 </head>
+
+
+
+
 <body>
+<c:if test="${! empty param.errorMsg}" >
+    <font color="red"> <b> ${param.errorMsg}     </b></font>
+</c:if>
 <div class="container" style="display: block">
     <div class="text">
         Regisztrációs Form
     </div>
-    <form action="signup.jsp" method="post">
+    <form action="adduser.jsp" method="post">
         <div class="data">
         <label>Felhasználónév</label> <input type="text" required name="userName"><br/>
         </div>
@@ -37,7 +48,6 @@
             <a href="login.jsp">  <button type="button" > Vissza  </button></a>
 
         </div>
-
 
     </form>
 </div>

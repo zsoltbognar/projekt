@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="derby" uuid="eef51abd-3819-454d-8a52-d73f7ea7ab71">
-      <driver-ref>derby.embedded</driver-ref>
+    <data-source source="LOCAL" name="db_bead@localhost" uuid="56e4c00c-1bd0-4c72-b885-77d09a53e65e">
+      <driver-ref>derby.remote</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>org.apache.derby.jdbc.EmbeddedDriver</jdbc-driver>
-      <jdbc-url>jdbc:derby:$USER_HOME$/Downloads/db-derby-10.15.2.0-bin</jdbc-url>
+      <jdbc-driver>org.apache.derby.jdbc.ClientDriver</jdbc-driver>
+      <jdbc-url>jdbc:derby://localhost:1527/db_bead;create=true</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>
