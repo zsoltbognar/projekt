@@ -41,7 +41,7 @@
 
     <form action="adduseradmin.jsp" method="post">
         <div class="data">
-            <label>Felhasználónév:</label> <input type="text" required name="userName"><br/>
+            <label>Felhasználónév:</label> <input type="text" required name="userName" ><br/>
         </div>
 
         <br>

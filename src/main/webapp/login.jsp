@@ -41,9 +41,6 @@
             <label>Jelszó</label> <input type="password" required name="password">
 
         </div>
-        <div class="forgot-pass">
-
-            <a href="#">Elfelejtett jelszó?</a></div>
 
         <div class="btn">
             <div class="inner">

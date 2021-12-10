@@ -46,8 +46,20 @@
                 <jsp:forward page="admin.jsp" />
             </c:when>
             <c:when test="${account.rowCount ne 0}">
-                <% session.setAttribute("validUser", request.getParameter("userName"));%>
-                <jsp:forward page="mainuser.jsp" />
+
+                <c:choose>
+                    <c:when test="${cookie.containsKey(param.userName)}">
+                        <jsp:forward page="nohirdetes.jsp" />
+                    </c:when>
+                    <c:otherwise>
+                        <%
+                            Cookie myCookie = new Cookie(request.getParameter("userName"), request.getParameter("userName"));
+                            myCookie.setMaxAge(24*60*60);
+                            response.addCookie(myCookie);
+                        %>
+                        <jsp:forward page="mainuser.jsp" />
+                    </c:otherwise>
+                </c:choose>
             </c:when>
             <c:otherwise>
                 <jsp:forward page="login.jsp" >
